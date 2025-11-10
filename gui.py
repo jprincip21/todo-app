@@ -10,12 +10,14 @@ todos_box = sg.Listbox(values=functions.get_todos(), key="todos",
 
 add_button = sg.Button("Add")
 edit_button = sg.Button("Edit")
+complete_button = sg.Button("Complete")
 exit_button = sg.Button("Exit")
 
 #Create Layout List, Each list inside list is displayed as a row in the gui
 layout = [[label],
           [input_box, add_button],
           [todos_box,edit_button],
+          [complete_button],
           [exit_button]]
 
 window = sg.Window("My To-Do App",
@@ -53,6 +55,15 @@ while True:
             functions.write_todos(todos)
 
             window["todos"].update(values=todos)
+
+        case "Complete":
+            selected_todo = values['todos'][0]
+            todos = functions.get_todos()
+            index = todos.index(selected_todo)
+            if selected_todo:
+                todos.pop(index)
+                functions.write_todos(todos)
+                window["todos"].update(values=todos)
 
         case "todos":
             # When the user clicks on a todo we grab the value from the values dictionary using the

@@ -4,9 +4,12 @@ import FreeSimpleGUI as sg
 # Creating items for GUI
 label = sg.Text("Type in a to-do")
 
-input_box = sg.InputText(tooltip="Enter todo", key="todo")
-todos_box = sg.Listbox(values=functions.get_todos(), key="todos",
-                       enable_events=True, size=(45,10))
+input_box = sg.InputText(tooltip="Enter todo",
+                         key="todo")
+todos_box = sg.Listbox(values=functions.get_todos(),
+                       key="todos",
+                       enable_events=True,
+                       size=(45,10))
 
 add_button = sg.Button("Add")
 edit_button = sg.Button("Edit")
@@ -78,5 +81,7 @@ while True:
 
         case sg.WIN_CLOSED:
             break
+
+window.close()
 
 

@@ -15,9 +15,9 @@ todos_box = sg.Listbox(values=functions.get_todos(),
                        enable_events=True,
                        size=(45,10))
 
-add_button = sg.Button("Add", size=8)
-edit_button = sg.Button("Edit", size=8)
-complete_button = sg.Button("Complete")
+add_button = sg.Button(image_source="assets/add.png", key="Add", tooltip="Add")
+edit_button = sg.Button("Edit")
+complete_button = sg.Button(image_source="assets/complete.png", key="Complete", tooltip="Complete")
 exit_button = sg.Button("Exit")
 
 add_complete_layout = [[edit_button],

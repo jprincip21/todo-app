@@ -81,7 +81,6 @@ while True:
             window["todo"].update(value=todo_to_edit)
 
         case "Exit":
-            window.close()
             break
 
         case sg.WIN_CLOSED:

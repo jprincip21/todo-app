@@ -68,9 +68,10 @@ while True:
             todos = functions.get_todos()
             index = todos.index(selected_todo)
             if selected_todo:
-                todos.pop(index)
+                todos.remove(selected_todo)
                 functions.write_todos(todos)
                 window["todos"].update(values=todos)
+                window["todo"].update(value="")
 
         case "todos":
             # When the user clicks on a todo we grab the value from the values dictionary using the

@@ -16,11 +16,15 @@ edit_button = sg.Button("Edit")
 complete_button = sg.Button("Complete")
 exit_button = sg.Button("Exit")
 
+add_complete_layout = [[edit_button],
+                       [complete_button]]
+
+add_complete_column = sg.Column(add_complete_layout)
+
 #Create Layout List, Each list inside list is displayed as a row in the gui
 layout = [[label],
           [input_box, add_button],
-          [todos_box,edit_button],
-          [complete_button],
+          [todos_box, add_complete_column],
           [exit_button]]
 
 window = sg.Window("My To-Do App",

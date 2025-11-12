@@ -7,7 +7,6 @@ if not os.path.exists("todos.txt"):
     with open("todos.txt", "w") as f:
         pass
 
-
 sg.theme("darkgrey8")
 
 # Creating items for GUI

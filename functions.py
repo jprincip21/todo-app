@@ -1,3 +1,5 @@
+import os
+
 FILEPATH = "todos.txt"
 
 def get_todos(filepath=FILEPATH):
@@ -14,5 +16,11 @@ def write_todos(todos_arg, filepath=FILEPATH):
     with open(filepath, "w") as file:
         file.writelines(todos_arg)
 
+def file_exists(filepath=FILEPATH):
+    if not os.path.exists(FILEPATH):
+        with open(FILEPATH, "w") as f:
+            pass
+
 if __name__ == "__main__":
     print("Functions file run")
+
